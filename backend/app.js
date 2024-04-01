@@ -1,12 +1,23 @@
-const express = require('express'); 
+const express = require('express');
+const connectDb = require("./config/dbConnection");
 
 const app = express(); 
 const PORT = 3000; 
 
+var contractRouter = require("./routes/contractRoutes");
+
+connectDb();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use("/api/contract", contractRouter);
+
 app.get('/', (req, res)=>{ 
     res.status(200); 
-    res.send("Welcome to Server"); 
+    res.send("Welcome to Medi-Script Server"); 
 }); 
+
 
 app.listen(PORT, (error) =>{ 
 	if(!error) 
