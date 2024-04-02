@@ -227,3 +227,134 @@ desktopPhoneInputs.forEach((input) => {
 });
 
 form.addEventListener('submit', handleSubmit);
+
+
+
+
+function TabsManager(el) {
+	this.tabsContainers = document.querySelectorAll(el);
+	this.init();
+}
+
+TabsManager.prototype.init = function () {
+	var self = this;
+
+	document.body.addEventListener("click", function (event) {
+		var target = event.target;
+
+		while (target !== document.body) {
+			if (target.matches(".tabs-tags__tag")) {
+				self.handleTabClick(target);
+				return;
+			}
+
+			target = target.parentNode;
+		}
+	});
+
+	self.tabsContainers.forEach(function (tabsContainer) {
+		if (tabsContainer) {
+			var contentTexts = tabsContainer.querySelectorAll(".tabs-content__text");
+			contentTexts.forEach(function (text, index) {
+				if (index !== 0) {
+					text.style.display = "none";
+				}
+			});
+			tabsContainer.querySelector(".tabs-tags__tag").classList.add("active");
+		}
+	});
+};
+
+TabsManager.prototype.handleTabClick = function (clickedTab) {
+	var self = this;
+	var tabsContainer = clickedTab.closest(".tabs");
+
+	if (tabsContainer) {
+		var contentTexts = tabsContainer.querySelectorAll(".tabs-content__text");
+		var tags = tabsContainer.querySelectorAll(".tabs-tags__tag");
+		var index = Array.from(tags).indexOf(clickedTab);
+		contentTexts.forEach(function (text) {
+			text.style.display = "none";
+		});
+		contentTexts[index].style.display = "block";
+		tags.forEach(function (t) {
+			t.classList.remove("active");
+		});
+		clickedTab.classList.add("active");
+	}
+};
+
+var tabsManager = new TabsManager(".tabs");
+
+
+// 2ndpage form
+const onSubmit = (values) => window.alert(JSON.stringify(values, undefined, 2));
+
+const drugform = createForm({
+  onSubmit,
+  validate: (values) => {
+    const errors = {};
+    if (!values.test1) {
+      errors.test1 = "Required";
+    }
+    if (!values.test2) {
+      errors.test2 = "Required";
+    }
+    return errors;
+  },
+});
+document.getElementById("drugform").addEventListener("submit", (event) => {
+  event.preventDefault();
+  drugform.submit();
+});
+function registerField(input) {
+  const { name } = input;
+  drugform.registerField(
+    name,
+    (fieldState) => {
+      const { blur, change, error, focus, touched, value } = fieldState;
+      const errorElement = document.getElementById(name + "_error");
+      if (!registered[name]) {
+        // first time, register event listeners
+        input.addEventListener("blur", () => blur());
+        input.addEventListener("input", (event) =>
+          change(
+            input.type === "checkbox"
+              ? event.target.checked
+              : event.target.value,
+          ),
+        );
+        input.addEventListener("focus", () => focus());
+        registered[name] = true;
+      }
+
+      // update value
+      if (input.type === "checkbox") {
+        input.checked = value;
+      } else {
+        input.value = value === undefined ? "" : value;
+      }
+
+      // show/hide errors
+      if (errorElement) {
+        if (touched && error) {
+          errorElement.innerHTML = error;
+          errorElement.style.display = "block";
+        } else {
+          errorElement.innerHTML = "";
+          errorElement.style.display = "none";
+        }
+      }
+    },
+    {
+      value: true,
+      error: true,
+      touched: true,
+    },
+  );
+}
+[...document.drugform[0]].forEach((input) => {
+  if (input.name) {
+    registerField(input);
+  }
+});
