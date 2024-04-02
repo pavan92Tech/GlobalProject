@@ -25,88 +25,78 @@
             <h1>Contract Details Form</h1>
             <form class="checkout-form" novalidate>
               <fieldset class="checkout-form__billing">
-                <legend class="checkout-form__legend">Create / Register contract</legend>
+                <legend class="checkout-form__legend">Create contract</legend>
                 <label class="checkout-form__firstname input">
-                  <span class="input__label">First Name</span>
+                  <span class="input__label">Contract Name</span>
                   <input 
                     name="firstname" 
                     type="text" 
                     required 
-                    placeholder="First Name" 
+                    placeholder="Contract Name" 
                     data-minlength="2" 
                     data-maxlength="256" 
                   />
                   <span class="input__error-message" aria-hidden="true"></span>
                 </label>
                 <label class="checkout-form__lastname input">
-                  <span class="input__label">Last Name</span>
+                  <span class="input__label">Contract Id</span>
                   <input 
                     name="lastname" 
                     type="text" 
                     required 
-                    placeholder="Last Name" 
+                    placeholder="Contract Id" 
                     data-minlength="2" 
                     data-maxlength="256" 
                   />
                   <span class="input__error-message" aria-hidden="true"></span>
                 </label>
-                <!-- <label class="checkout-form__username input">
-                  <span class="input__label">Username</span>
-                  <input 
-                    name="username" 
-                    type="username" 
-                    required 
-                    placeholder="Username" 
-                    data-minlength="2" 
-                    data-maxlength="256" 
-                  />
-                  <span class="input__error-message" aria-hidden="true"></span>
-                </label> -->
-                <!-- <label class="checkout-form__phone input">
-                  <span class="input__label">Phone</span>
-                  <div class="input__phone">
-                    <input type="text" pattern="^[0-9]{3}$" name="phoneAreaCode" maxlength="3" data-minlength="3" />
-                    <input type="text" pattern="^[0-9]{3}$" name="phoneFirst" maxlength="3" data-minlength="3" />
-                    <input type="text" pattern="^[0-9]{4}$" name="phoneLast" maxlength="4" data-minlength="3" />
-                    <input type="tel" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$" name="phoneMobile" placeholder="555-555-5555" />
-                  </div>
-                  <span class="input__error-message" aria-hidden="true"></span>
-                </label> -->
-                <label class="checkout-form__email input">
-                  <span class="input__label">Email</span>
+                <label class="checkout-form__firstname input">
+                  <span class="input__label"> Contract Start Date</span>
                   <input 
                     name="email" 
-                    type="email" 
+                    type="date" 
                     required 
-                    placeholder="Email" 
-                    data-minlength="6" 
-                    data-maxlength="256"
+                    min="2000-01-01" 
+                    max="2999-12-31"
+                  />
+                  <span class="input__error-message" aria-hidden="true"></span>
+                </label>
+                <label class="checkout-form__lastname input">
+                  <span class="input__label">Contract End date</span>
+                  <input 
+                    name="creditCardExpiration" 
+                    type="date" 
+                    required 
+                    min="2000-01-01" 
+                    max="2999-12-31"
                   />
                   <span class="input__error-message" aria-hidden="true"></span>
                 </label>
                 <label class="checkout-form__address input">
-                  <span class="input__label">Address</span>
+                  <span class="input__label">Covered Amount</span>
                   <input 
-                    name="address" 
-                    type="text" 
+                    name="zipcode" 
+                    type="number" 
                     required 
-                    placeholder="1234 Main St." 
+                    placeholder="00.00" 
                     data-minlength="3" 
-                    data-maxlength="256" 
-                  />
-                  <span class="input__error-message" aria-hidden="true"></span>
-                </label>
-                <label class="checkout-form__address2 input">
-                  <span class="input__label">Address 2</span>
-                  <input 
-                    name="address2" 
-                    type="text" 
-                    placeholder="Appartment or Suite" 
+                    data-maxlength="9999999.99"
+                    pattern="^\d{10}" 
                   />
                   <span class="input__error-message" aria-hidden="true"></span>
                 </label>
                 <label class="checkout-form__country input input--select">
-                  <span class="input__label">Country</span>
+                  <span class="input__label">Manufacturer Name</span>
+                  <select name="state" required>
+                    <option></option>
+                    <option>Abbot</option>
+                    <option>Abbvie</option>
+                    <option>Sun Pharma</option>
+                  </select>
+                  <span class="input__error-message" aria-hidden="true"></span>
+                </label>
+                <label class="checkout-form__state input input--select">
+                  <span class="input__label">Location</span>
                   <select name="country" required>
                     <option></option>
                     <option>India</option>
@@ -114,7 +104,7 @@
                   <span class="input__error-message" aria-hidden="true"></span>
                 </label>
                 <label class="checkout-form__state input input--select">
-                  <span class="input__label">State</span>
+                  <span class="input__label">Applicable State</span>
                   <select name="state" required>
                     <option></option>
                     <option>Karnataka</option>
@@ -123,26 +113,13 @@
                   </select>
                   <span class="input__error-message" aria-hidden="true"></span>
                 </label>
-                <label class="checkout-form__zipcode input">
-                  <span class="input__label">ZipCode</span>
-                  <input 
-                    name="zipcode" 
-                    type="number" 
-                    required 
-                    placeholder="12345" 
-                    data-minlength="5" 
-                    data-maxlength="10"
-                    pattern="^\d{6}" 
-                  />
-                  <span class="input__error-message" aria-hidden="true"></span>
-                </label>
                 <label class="checkout-form__same-shipping">
                   <input type="checkbox" name="sameShipping" />
                   <span>Is user covered with Rebatebale and Non Rebatebale Drugs</span>
                 </label>
                 <label class="checkout-form__save-info">
                   <input type="checkbox" name="saveInfo" />
-                  <span>Is user covered with Insulins</span>
+                  <span>Is user covered with Insulins and powders</span>
                 </label>
               </fieldset>
               <!-- <fieldset class="checkout-form__payment">
