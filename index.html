@@ -219,6 +219,7 @@
           </div>
           <div class="tabs-content__text">Drug tab
             <form id="drugform">
+              <fieldset class="checkout-form__billing">
           <label class="checkout-form__firstname input">
             <span class="input__label">Test</span>
             <input 
@@ -230,7 +231,20 @@
             <span id="test1_error" ></span>
             
           </label>
+          <label class="input input--select drug-input--select input--required">
+            <span class="input__label">Manufacturer</span>
+            <select name="Manufacturer" required="">
+              <option>Select</option>
+              <option>Cipla</option>
+              <option>Abbive</option>
+              <option>Calpal</option>
+            </select>
+            <span class="input__error-message" aria-hidden="true"></span>
+          </label>
+          
+          
           <button type="submit">Submit</button>
+        </fieldset>
           </form>
          
           </div>
