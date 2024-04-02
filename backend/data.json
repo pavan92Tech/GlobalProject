@@ -1,0 +1,13 @@
+{
+    "address": "Bengaluru",
+    "address2": "Abcd Road",
+    "country": "India",
+    "email": "ravikiran@gmail.com",
+    "firstname": "Ravikiran",
+    "lastname": "Patil",
+    "phone": "",
+    "sameShipping": true,
+    "saveInfo": true,
+    "state": "Karnataka",
+    "zipcode": "123456"
+}
