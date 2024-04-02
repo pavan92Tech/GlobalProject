@@ -28,7 +28,7 @@ body {
 
 main {
   margin: auto;
-  width: 100%;
+  width: 60%;
   padding: 0 1rem;
 }
 
@@ -36,7 +36,7 @@ main > h1 {
   text-align: center;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   main {
     max-width: 640px;
   }
@@ -212,6 +212,10 @@ main > h1 {
 @media only screen and (min-width: 768px) {
   .input--select::after {
     top: 2.6rem;
+  }
+
+  .drug-input--select::after {
+    top: 4.6rem !important;
   }
 }
 
