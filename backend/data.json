@@ -1,4 +1,5 @@
-{
+[
+  {
     "address": "Bengaluru",
     "address2": "Abcd Road",
     "country": "India",
@@ -10,4 +11,44 @@
     "saveInfo": true,
     "state": "Karnataka",
     "zipcode": "123456"
-}
+  },
+
+  {
+    "manufacturerId": "660cf83703ff2cbe7a5eb81e",
+    "manufacturerName": "Nicip",
+    "contractName": "C001",
+    "contractId": "C001",
+    "startDate": "2024-04-03",
+    "endDate": "2024-06-03",
+    "coveredAmount": 20000,
+    "country": "India",
+    "state": "Karnataka",
+    "isRebatebaleCovered": true,
+    "isInsulinCovered": true,
+    "sameShipping": true,
+    "saveInfo": true
+  },
+
+  {
+    "name": "Nicip",
+    "startDate": "2024-04-03",
+    "endDate": "2024-04-29",
+    "address": "Bangalore",
+    "phone": "9876543210",
+    "regId": "M01",
+    "cashless": true,
+    "reimbursement": true
+  },
+
+  {
+    "manufacturerId": "660cf83703ff2cbe7a5eb81e",
+    "contractId": "660cfe96f8347ccfed675953",
+    "drugName": "Nicip 1",
+    "drugCode": "N001",
+    "mfdDate": "2024-04-03",
+    "expDate": "2024-04-03",
+    "registered": true,
+    "isSafeForUnderAge": true,
+    "drugType": "Tablet"
+  }
+]
