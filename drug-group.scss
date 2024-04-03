@@ -1,0 +1,32 @@
+@media only screen and (min-width: 768px) {
+    .checkout-form fieldset {
+      display: table-column-group;
+      row-gap: 1rem;
+      column-gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+  
+    .drug-input--select::after {
+      top: 2.6rem !important;
+    }
+  }
+
+  .input--select::after {
+    content: "╲╱";
+    font-size: 0.5rem;
+    font-weight: bold;
+    display: block;
+    position: absolute;
+    top: 3.5rem;
+    right: 1rem;
+    pointer-events: none;
+    transform: scaleX(1.5);
+    left:24rem;
+  }
+
+  
+
+  
