@@ -55,26 +55,24 @@
         <label class="checkout-form__address input">
           <span class="input__label">Drug Mfd date</span>
           <input 
-            name="firstname" 
-            type="text" 
-            required 
-            placeholder="Contract Name" 
-            data-minlength="2" 
-            data-maxlength="256" 
-          />
-          <span class="input__error-message" aria-hidden="true"></span>
+          name="email" 
+          type="date" 
+          required 
+          min="2000-01-01" 
+          max="2999-12-31"
+        />
+        <span class="input__error-message" aria-hidden="true"></span>
         </label>
         <label class="checkout-form__address input">
           <span class="input__label">Drug Exp date</span>
           <input 
-            name="firstname" 
-            type="text" 
-            required 
-            placeholder="Contract Name" 
-            data-minlength="2" 
-            data-maxlength="256" 
-          />
-          <span class="input__error-message" aria-hidden="true"></span>
+          name="creditCardExpiration" 
+          type="date" 
+          required 
+          min="2000-01-01" 
+          max="2999-12-31"
+        />
+        <span class="input__error-message" aria-hidden="true"></span>
         </label>
         <label class="input input--select drug-input--select input--required">
           <span class="input__label">Is Drug Registered</span>
