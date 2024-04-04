@@ -1,35 +1,35 @@
 const mongoose = require("mongoose");
 
 const contractSchema = mongoose.Schema(
-  // {
-  //   billing: { type: mongoose.Schema.Types.Mixed, default: {} },
-  //   payment: { type: mongoose.Schema.Types.Mixed, default: {} },
-  // },
-  // { minimize: false },
   {
-    firstName: {
-      type: String,
-      required: [true, "Please add the first name"],
+    manufacturerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Manufacturer",
     },
-    lastName: {
+    manufacturerName: {
       type: String,
-      required: [true, "Please add the last name"],
+      required: [true, "Please add the manufacturer name"],
     },
-    email: {
+    contractName: {
       type: String,
-      required: [true, "Please add the email address"],
+      required: [true, "Please add the contract name"],
     },
-    address: {
+    contractId: {
       type: String,
-      required: [true, "Please add the address"],
+      required: [true, "Please add the contract ID"],
     },
-    address2: {
+    startDate: {
       type: String,
-      required: [false, "Please add the address 2"],
+      required: [true, "Please add the start date"],
     },
-    phone: {
-      type: String, default: "",
-      required: [false, "Please add the phone"],
+    endDate: {
+      type: String,
+      required: [true, "Please add the end date"],
+    },
+    coveredAmount: {
+      type: Number,
+      required: [true, "Please add the covered amount"],
     },
     country: {
       type: String,
@@ -39,19 +39,21 @@ const contractSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add the state"],
     },
-    zipCode: {
-      type: String,
-      required: [true, "Please add the ZipCode"],
+    isRebatebaleCovered: {
+      type: Boolean, default: false,
+      required: [true, "Please add the Rebatebale Covered"],
+    },
+    isInsulinCovered: {
+      type: Boolean, default: false,
+      required: [true, "Please add the Insulin Covered"],
     },
     sameShipping: {
-      type: Boolean,
-      default: false,
-      // required: [true, "Please check the sameShipping"],
+      type: Boolean, default: false,
+      required: [false, "Please add the same shipping"],
     },
     saveInfo: {
-      type: Boolean,
-      default: false,
-      // required: [true, "Please check the saveInfo"],
+      type: Boolean, default: false,
+      required: [false, "Please add the save info"],
     }
   },
   {
