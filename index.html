@@ -48,6 +48,20 @@
           </script>
 
          
+          </div>          
+          <div class="tabs-content__text">
+            <div id="manufacturerContent"></div>
+            <script>
+             
+      
+              fetch('manufacturer.html')
+                  .then(response => response.text())
+                  .then(html => {
+                      document.getElementById('manufacturerContent').innerHTML = html;
+                  });
+          </script>
+
+         
           </div>
         </div>
       </div>

@@ -1,0 +1,104 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.scss">
+    <link rel="stylesheet" type="text/css" href="tabs.scss">
+    
+    <title>Mediscript</title>
+  </head>
+  <body>
+<main>
+    <h1>Manufacturer Details Form</h1>
+    <form class="checkout-form" novalidate>
+      <fieldset class="checkout-form__billing">
+        <legend class="checkout-form__legend">Create Manufacturer</legend>
+        <label class="checkout-form__firstname input">
+          <span class="input__label">Manufacturer Name</span>
+          <input 
+            name="firstname" 
+            type="text" 
+            required 
+            placeholder="Manufacturer Name" 
+            data-minlength="2" 
+            data-maxlength="256" 
+          />
+          <span class="input__error-message" aria-hidden="true"></span>
+        </label>
+        
+        <label class="checkout-form__firstname input">
+          <span class="input__label"> Contract Start Date</span>
+          <input 
+            name="contractStartDate" 
+            type="date" 
+            required 
+            min="2000-01-01" 
+            max="2999-12-31"
+          />
+          <span class="input__error-message" aria-hidden="true"></span>
+        </label>
+        <label class="checkout-form__lastname input">
+          <span class="input__label">Contract End date</span>
+          <input 
+            name="contractEndDate" 
+            type="date" 
+            required 
+            min="2000-01-01" 
+            max="2999-12-31"
+          />
+          <span class="input__error-message" aria-hidden="true"></span>
+        </label>
+        <label class="checkout-form__address input">
+            <span class="input__label">Manufacturer Address</span>
+            <input 
+              name="address" 
+              type="text" 
+              required 
+              placeholder="Manufacturer Address" 
+              data-minlength="2" 
+              data-maxlength="256" 
+            />
+            <span class="input__error-message" aria-hidden="true"></span>
+          </label>
+          <label class="checkout-form__address input">
+            <span class="input__label">Manufacturer Phone No</span>
+            <small>Format: 91-7808977973</small>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{2}-[0-9]{10}" required/>
+            <span class="input__error-message" aria-hidden="true"></span>
+          </label>
+          <label class="checkout-form__lastname input">
+            <span class="input__label">Manufacturer Id</span>
+            <input 
+              name="lastname" 
+              type="text" 
+              required 
+              placeholder="Manufacturer Id" 
+              data-minlength="2" 
+              data-maxlength="256" 
+            />
+            <span class="input__error-message" aria-hidden="true"></span>
+          </label>
+          <label class="checkout-form__same-shipping">
+            <input type="checkbox" name="supportsCashless" />
+            <span>Manufacturer supports cashless</span>
+          </label>
+          <br>
+          <label class="checkout-form__save-info">
+            <input type="checkbox" name="supportReimbursement" />
+            <span>Manufacturer Support Reimbursement</span>
+          </label>
+      </fieldset>
+      <button class="checkout-form__button">Save Contract</button>
+      <button class="checkout-form__button">Cancel</button>
+      <p class="checkout-form__message"></p>
+    </form>
+</main>
+ <script src="script.js"></script>
+  </body>
+ 
+  </html>
