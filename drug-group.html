@@ -17,7 +17,7 @@
       
         <label class="input input--select drug-input--select input--required">
           <span class="input__label">Manufacturer</span>
-          <select name="Manufacturer" required="">
+          <select name="Manufacturer" required>
             <option>Select</option>
             <option>Cipla</option>
             <option>Abbive</option>
@@ -31,10 +31,10 @@
         <label class="checkout-form__address input">
           <span class="input__label">Drug Name</span>
           <input 
-            name="firstname" 
+            name="Drugname" 
             type="text" 
             required 
-            placeholder="Contract Name" 
+            placeholder="Drugname" 
             data-minlength="2" 
             data-maxlength="256" 
           />
@@ -43,10 +43,10 @@
         <label class="checkout-form__address input">
           <span class="input__label">Drug Code</span>
           <input 
-            name="firstname" 
+            name="Drugcode" 
             type="text" 
             required 
-            placeholder="Contract Name" 
+            placeholder="Drug code" 
             data-minlength="2" 
             data-maxlength="256" 
           />
@@ -55,7 +55,7 @@
         <label class="checkout-form__address input">
           <span class="input__label">Drug Mfd date</span>
           <input 
-          name="email" 
+          name="Drug-mfd-date" 
           type="date" 
           required 
           min="2000-01-01" 
@@ -66,7 +66,7 @@
         <label class="checkout-form__address input">
           <span class="input__label">Drug Exp date</span>
           <input 
-          name="creditCardExpiration" 
+          name="Drug-exp-date" 
           type="date" 
           required 
           min="2000-01-01" 
@@ -76,7 +76,7 @@
         </label>
         <label class="input input--select drug-input--select input--required">
           <span class="input__label">Is Drug Registered</span>
-          <select name="Manufacturer" required="">
+          <select name="Manufacturer" required>
             <option>Select</option>
             <option>Yes</option>
             <option>No</option>
@@ -85,7 +85,7 @@
         </label>
         <label class="input input--select drug-input--select input--required">
           <span class="input__label">Is Drug Safe below 18 years</span>
-          <select name="Manufacturer" required="">
+          <select name="Manufacturer" required>
             <option>Select</option>
             <option>Yes</option>
             <option>No</option>
@@ -94,7 +94,7 @@
         </label>
         <label class="input input--select drug-input--select input--required">
           <span class="input__label">Drug Type</span>
-          <select name="Manufacturer" required="">
+          <select name="Manufacturer" required>
             <option>Select</option>
             <option>Tablet</option>
             <option>Syrup</option>
@@ -105,7 +105,7 @@
         </label>
         <span class="submit-cancel">
         <button type="submit" class="checkout-form__button">Submit</button>
-        <button type="submit" class="checkout-form__button">Cancel</button>
+        <button type="cancel" class="checkout-form__button">Cancel</button>
       </span>
       </fieldset>
         </form>
