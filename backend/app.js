@@ -1,4 +1,6 @@
 const express = require('express');
+var cookieParser = require('cookie-parser');
+
 const connectDb = require("./config/dbConnection");
 
 const app = express(); 
@@ -7,15 +9,18 @@ const PORT = 3000;
 var contractRouter = require("./routes/contractRoutes");
 var manufacturerRouter = require("./routes/manufacturerRoutes");
 var drugRouter = require("./routes/drugRoutes");
+var userRouter = require("./routes/userRoutes");
 
 connectDb();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.use("/api/contract", contractRouter);
 app.use("/api/manufacturer", manufacturerRouter);
 app.use("/api/drug", drugRouter);
+app.use("/api/user", userRouter);
 
 app.get('/', (req, res)=>{ 
     res.status(200); 
