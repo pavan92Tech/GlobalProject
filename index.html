@@ -37,18 +37,27 @@
           <div class="tabs-content__text">
             <h1>Drug  group tab</h1>
             <div id="drugContent"></div>
-            <script>
-             
+            <script>            
       
-              fetch('drug-group.html')
+                fetch('drug-group.html')
+                    .then(response => response.text())
+                    .then(html => {
+                        document.getElementById('drugContent').innerHTML = html;
+                    });
+            </script>         
+          </div>
+          <div class="tabs-content__text">
+            <div id="manufacturerContent"></div>
+            <script>            
+      
+              fetch('manufacturer.html')
                   .then(response => response.text())
                   .then(html => {
-                      document.getElementById('drugContent').innerHTML = html;
+                      document.getElementById('manufacturerContent').innerHTML = html;
                   });
-          </script>
-
-         
+            </script>         
           </div>
+        </div>
         </div>
       </div>
     </main>
