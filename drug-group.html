@@ -12,7 +12,7 @@
   </head>
 <body>
     <main>
-        <form id="drugform" class="checkout-form">
+        <form id="drugform" class="checkout-form checkout-form-drug">
             <fieldset class="checkout-form__billing">
       
         <label class="input input--select drug-input--select input--required">
@@ -25,9 +25,10 @@
           </select>
           <span class="input__error-message" aria-hidden="true"></span>
         </label>
+        <div>
+          <button type="submit" class="checkout-form__button">Select Button</button>
+        </div>        
         
-        
-        <button type="submit" class="checkout-form__button">Select Button</button>
         <label class="checkout-form__address input">
           <span class="input__label">Drug Name</span>
           <input 
@@ -103,10 +104,10 @@
           </select>
           <span class="input__error-message" aria-hidden="true"></span>
         </label>
-        <span class="submit-cancel">
-        <button type="submit" class="checkout-form__button">Submit</button>
-        <button type="cancel" class="checkout-form__button">Cancel</button>
-      </span>
+        <div class="submit-cancel">
+          <button type="submit" class="checkout-form__button">Submit</button>
+          <button type="cancel" class="checkout-form__button">Cancel</button>
+        </div>
       </fieldset>
         </form>
     </main>
