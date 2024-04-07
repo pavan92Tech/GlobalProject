@@ -16,7 +16,30 @@
 </head>
 
 <body>
-  <h1>Contract Details Form</h1>
+  <h3>Contract Details Form</h3>
+
+  <div class="container">
+    <div class="table-responsive">
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Contract Name</th>
+            <th>Contract Id </th>
+            <th>Contract Start Date</th>
+            <th>Contract End Date</th>
+            <th>Covered Amount</th>
+            <th>Manufacturer Name</th>
+            <th>Location</th>
+            <th>Applicable State</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Table body will be populated dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
   <button class="checkout-form__button" onclick="openPopup()">Create contract</button>
   <div id="popupForm" class="popup">
     <div class="popup-content">
@@ -98,27 +121,7 @@
     </div>
   </div>
 
-  <div class="container">
-    <div class="table-responsive">
-      <table id="dataTable">
-        <thead>
-          <tr>
-            <th>Contract Name</th>
-            <th>Contract Id </th>
-            <th>Contract Start Date</th>
-            <th>Contract End Date</th>
-            <th>Covered Amount</th>
-            <th>Manufacturer Name</th>
-            <th>Location</th>
-            <th>Applicable State</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <!-- Table body will be populated dynamically -->
-        </tbody>
-      </table>
-    </div>
-  </div>
+  
   <script src="script.js"></script>
   <script src="contract.js"></script>
 </body>
