@@ -10,6 +10,11 @@ function submitForm() {
   var contractname = document.getElementById("contractname").value;
   var contractid = document.getElementById("contractid").value;
   var startdate = document.getElementById("startdate").value;
+  var enddate = document.getElementById("enddate").value;
+  var coveredamount = document.getElementById("coveredamount").value;
+  var manufacturername = document.getElementById("manufacturername").value;
+  var country = document.getElementById("country").value;
+  var state = document.getElementById("state").value;
   // Create a new row
   var newRow = document.createElement("tr");
 
@@ -21,6 +26,16 @@ function submitForm() {
     contractid +
     "</td><td>" +
     startdate +
+    "</td><td>" +
+    enddate +
+    "</td><td>" +
+    coveredamount +
+    "</td><td>" +
+    manufacturername +
+    "</td><td>" +
+    country +
+    "</td><td>" +
+       state +
     "</td>";
 
   // Append the row to the table body
@@ -30,6 +45,12 @@ function submitForm() {
   document.getElementById("contractname").value = "";
   document.getElementById("contractid").value = "";
   document.getElementById("startdate").value = "";
+  document.getElementById("enddate").value = "";
+  document.getElementById("coveredamount").value = "";
+  document.getElementById("manufacturername").value = "";
+  document.getElementById("country").value = "";
+  document.getElementById("state").value = "";
+
 
   // Close the popup
   closePopup();
