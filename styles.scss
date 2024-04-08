@@ -14,14 +14,14 @@ html {
   --color-muted: #6c757d;
   --color-success: #28a745;
   --color-warning: #ffc107;
-  --color-danger: #dc3545;
+  --color-danger: #030202;
   --color-link: #007bff;
   --color-border: #ced4da;
   --color-primary: #134563;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   display: flex;
   min-height: 100vh;
 }
@@ -41,7 +41,6 @@ h1 {
     max-width: 640px;
   }
 }
-
 
 /* BEM */
 /* --- */
@@ -66,7 +65,7 @@ h1 {
   font-size: 1.5rem;
   grid-column: span 4;
   position: relative;
-  top:-0.5rem;
+  top: -0.5rem;
 }
 
 .checkout-form__button {
@@ -75,7 +74,7 @@ h1 {
   cursor: pointer;
   grid-column: span 4;
   width: 100%;
-  padding: 0.75rem 1rem;;
+  padding: 0.75rem 1rem;
   margin: 12px 0px;
   border: 0;
   border-radius: 0.3rem;
@@ -103,7 +102,7 @@ h1 {
 .checkout-form__country,
 .checkout-form__name-on-card,
 .checkout-form__credit-card-number {
-  grid-column: span 2
+  grid-column: span 2;
 }
 
 .checkout-form__email,
@@ -151,7 +150,7 @@ h1 {
   .input__phone::before,
   .input__phone::after {
     color: var(--color-border);
-    content: '—';
+    content: "—";
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -189,7 +188,7 @@ h1 {
   width: 100%;
   padding: 0.75rem 1rem;
   margin: 0.5rem 0;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--color-border);
 }
 
@@ -223,9 +222,9 @@ h1 {
   appearance: none;
   background-image: none;
   background-color: transparent;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--color-border);
-  box-shadow: 0 15px 30px -10px rgba(0,0,0,0.10);
+  box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
 .input--error .input__error-message {

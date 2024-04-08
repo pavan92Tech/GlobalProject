@@ -1,8 +1,8 @@
 .checkout-form-man {
-    .checkout-form__billing {
-      display: table-column-group;
-      row-gap: 1rem;
-      column-gap: 2rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .checkout-form__billing {
+    display: table-column-group;
+    row-gap: 1rem;
+    column-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
+}
