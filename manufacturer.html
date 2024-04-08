@@ -16,6 +16,25 @@
     <title>Mediscript</title>
   </head>
   <body>
+    <div class="container">
+      <div class="table-responsive">
+        <table id="dataTable1">
+          <thead>
+            <tr>
+              <th>Manufacturer Name</th>
+              <th>Contract Start Date</th>
+              <th>Contract End date</th>
+              <th>Manufacturer Address</th>
+              <th>Manufacturer Phone No</th>
+              <th>Manufacturer Id</th>
+              </tr>
+          </thead>
+          <tbody id="tableBody2">
+            <!-- Table body will be populated dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </div>
 
     <button class="checkout-form__button" onclick="openPopupManufacturer()">Create Manufacturer</button>
   <div id="popupForm2" class="popup">
@@ -28,7 +47,8 @@
           <label class="checkout-form__firstname input">
             <span class="input__label">Manufacturer Name</span>
             <input
-              name="firstname"
+              name="manufacturernamedetail"
+              id="manufacturernamedetail"
               type="text"
               required
               placeholder="Manufacturer Name"
@@ -39,9 +59,10 @@
           </label>
 
           <label class="checkout-form__firstname input">
-            <span class="input__label"> Contract Start Date</span>
+            <span class="input__label">Contract Start Date</span>
             <input
               name="contractStartDate"
+              id="contractStartDate"
               type="date"
               required
               min="2000-01-01"
@@ -53,6 +74,7 @@
             <span class="input__label">Contract End date</span>
             <input
               name="contractEndDate"
+              id="contractEndDate"
               type="date"
               required
               min="2000-01-01"
@@ -64,6 +86,7 @@
             <span class="input__label">Manufacturer Address</span>
             <input
               name="address"
+              id="address"
               type="text"
               required
               placeholder="Manufacturer Address"
@@ -87,8 +110,9 @@
           <label class="checkout-form__lastname input">
             <span class="input__label">Manufacturer Id</span>
             <input
-              name="lastname"
-              type="text"
+              name="manufacturerId"
+              id="manufacturerId"
+              type="number"
               required
               placeholder="Manufacturer Id"
               data-minlength="2"
@@ -106,8 +130,8 @@
           </label>
         </fieldset>
         <div>
-          <button class="checkout-form__button">Save Manufacturer</button>
-          <button class="checkout-form__button">Cancel</button>
+          <button class="checkout-form__button" type="button" onclick="submitFormManufacturer()">Save Manufacturer</button>
+          <button type="cancel" class="checkout-form__button">Cancel</button>
         </div>
 
         <p class="checkout-form__message"></p>
