@@ -67,18 +67,18 @@
           </label>
           <label class="checkout-form__lastname input">
             <span class="input__label">Contract End date</span>
-            <input name="creditCardExpiration" type="date" min="2000-01-01" max="2999-12-31" />
+            <input name="enddate" id="enddate" type="date" min="2000-01-01" max="2999-12-31" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__address input">
             <span class="input__label">Covered Amount</span>
-            <input name="zipcode" type="number" placeholder="00.00" data-minlength="3" data-maxlength="9999999.99"
+            <input name="coveredamount" id="coveredamount" type="number" placeholder="00.00" data-minlength="3" data-maxlength="9999999.99"
               pattern="^\d{10}" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__country input input--select">
             <span class="input__label">Manufacturer Name</span>
-            <select name="state">
+            <select name="manufacturername" id="manufacturername">
               <option></option>
               <option>Abbot</option>
               <option>Abbvie</option>
@@ -88,7 +88,7 @@
           </label>
           <label class="checkout-form__state input input--select">
             <span class="input__label">Location</span>
-            <select name="country">
+            <select name="country" id="country">
               <option></option>
               <option>India</option>
             </select>
@@ -96,7 +96,7 @@
           </label>
           <label class="checkout-form__state input input--select">
             <span class="input__label">Applicable State</span>
-            <select name="state">
+            <select name="state" id="state">
               <option></option>
               <option>Karnataka</option>
               <option>Lucknow</option>
