@@ -26,6 +26,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
   
     // Simulating login success
     alert('Login successful!');
+    window.location.href = 'index.html';
   });
   
   document.getElementById('resetButton').addEventListener('click', function() {
