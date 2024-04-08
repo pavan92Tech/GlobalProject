@@ -11,106 +11,113 @@
     <title>Mediscript</title>
   </head>
 <body>
-    <main>
-        <form id="drugform" class="checkout-form checkout-form-drug">
-            <fieldset class="checkout-form__billing">
-      
-        <label class="input input--select drug-input--select input--required">
-          <span class="input__label">Manufacturer</span>
-          <select name="Manufacturer" required>
-            <option>Select</option>
-            <option>Cipla</option>
-            <option>Abbive</option>
-            <option>Calpal</option>
-          </select>
-          <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <div>
-          <button type="submit" class="checkout-form__button">Select Button</button>
-        </div>        
-        
-        <label class="checkout-form__address input">
-          <span class="input__label">Drug Name</span>
-          <input 
-            name="Drugname" 
-            type="text" 
-            required 
-            placeholder="Drugname" 
-            data-minlength="2" 
-            data-maxlength="256" 
-          />
-          <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <label class="checkout-form__address input">
-          <span class="input__label">Drug Code</span>
-          <input 
-            name="Drugcode" 
-            type="text" 
-            required 
-            placeholder="Drug code" 
-            data-minlength="2" 
-            data-maxlength="256" 
-          />
-          <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <label class="checkout-form__address input">
-          <span class="input__label">Drug Mfd date</span>
-          <input 
-          name="Drug-mfd-date" 
-          type="date" 
-          required 
-          min="2000-01-01" 
-          max="2999-12-31"
-        />
-        <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <label class="checkout-form__address input">
-          <span class="input__label">Drug Exp date</span>
-          <input 
-          name="Drug-exp-date" 
-          type="date" 
-          required 
-          min="2000-01-01" 
-          max="2999-12-31"
-        />
-        <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <label class="input input--select drug-input--select input--required">
-          <span class="input__label">Is Drug Registered</span>
-          <select name="Manufacturer" required>
-            <option>Select</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-          <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <label class="input input--select drug-input--select input--required">
-          <span class="input__label">Is Drug Safe below 18 years</span>
-          <select name="Manufacturer" required>
-            <option>Select</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
-          <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <label class="input input--select drug-input--select input--required">
-          <span class="input__label">Drug Type</span>
-          <select name="Manufacturer" required>
-            <option>Select</option>
-            <option>Tablet</option>
-            <option>Syrup</option>
-            <option>Injection</option>
-            <option>Powder</option>
-          </select>
-          <span class="input__error-message" aria-hidden="true"></span>
-        </label>
-        <div class="submit-cancel">
-          <button type="submit" class="checkout-form__button">Submit</button>
-          <button type="cancel" class="checkout-form__button">Cancel</button>
-        </div>
-      </fieldset>
-        </form>
-    </main>
+
+  <button class="checkout-form__button" onclick="openPopupDrug()">Create DrugGroup</button>
+  <div id="popupForm1" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopupDrug()">&times;</span>
+      <h2>Contract Details Form</h2>
+      <form id="drugform" class="checkout-form checkout-form-drug">
+        <fieldset class="checkout-form__billing">
+  
+    <label class="input input--select drug-input--select input--required">
+      <span class="input__label">Manufacturer</span>
+      <select name="Manufacturer" required>
+        <option>Select</option>
+        <option>Cipla</option>
+        <option>Abbive</option>
+        <option>Calpal</option>
+      </select>
+      <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <div>
+      <button type="submit" class="checkout-form__button">Select Button</button>
+    </div>        
+    
+    <label class="checkout-form__address input">
+      <span class="input__label">Drug Name</span>
+      <input 
+        name="Drugname" 
+        type="text" 
+        required 
+        placeholder="Drugname" 
+        data-minlength="2" 
+        data-maxlength="256" 
+      />
+      <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <label class="checkout-form__address input">
+      <span class="input__label">Drug Code</span>
+      <input 
+        name="Drugcode" 
+        type="text" 
+        required 
+        placeholder="Drug code" 
+        data-minlength="2" 
+        data-maxlength="256" 
+      />
+      <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <label class="checkout-form__address input">
+      <span class="input__label">Drug Mfd date</span>
+      <input 
+      name="Drug-mfd-date" 
+      type="date" 
+      required 
+      min="2000-01-01" 
+      max="2999-12-31"
+    />
+    <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <label class="checkout-form__address input">
+      <span class="input__label">Drug Exp date</span>
+      <input 
+      name="Drug-exp-date" 
+      type="date" 
+      required 
+      min="2000-01-01" 
+      max="2999-12-31"
+    />
+    <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <label class="input input--select drug-input--select input--required">
+      <span class="input__label">Is Drug Registered</span>
+      <select name="Manufacturer" required>
+        <option>Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <label class="input input--select drug-input--select input--required">
+      <span class="input__label">Is Drug Safe below 18 years</span>
+      <select name="Manufacturer" required>
+        <option>Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+      <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <label class="input input--select drug-input--select input--required">
+      <span class="input__label">Drug Type</span>
+      <select name="Manufacturer" required>
+        <option>Select</option>
+        <option>Tablet</option>
+        <option>Syrup</option>
+        <option>Injection</option>
+        <option>Powder</option>
+      </select>
+      <span class="input__error-message" aria-hidden="true"></span>
+    </label>
+    <div class="submit-cancel">
+      <button type="submit" class="checkout-form__button">Submit</button>
+      <button type="cancel" class="checkout-form__button">Cancel</button>
+    </div>
+  </fieldset>
+    </form>
+      </p>
+    </div>
+  </div>
     <script src="script.js"></script>
     <script src="drug-group.js"></script>
       </body>
