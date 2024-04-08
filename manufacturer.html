@@ -16,7 +16,11 @@
     <title>Mediscript</title>
   </head>
   <body>
-    <main>
+
+    <button class="checkout-form__button" onclick="openPopupManufacturer()">Create Manufacturer</button>
+  <div id="popupForm2" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopupManufacturer()">&times;</span>
       <h1>Manufacturer Details Form</h1>
       <form class="checkout-form checkout-form-man" novalidate>
         <fieldset class="checkout-form__billing">
@@ -108,6 +112,11 @@
 
         <p class="checkout-form__message"></p>
       </form>
+      </p>
+    </div>
+  </div>
+    <main>
+      
     </main>
     <script src="script.js"></script>
   </body>
