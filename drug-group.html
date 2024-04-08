@@ -11,6 +11,27 @@
     <title>Mediscript</title>
   </head>
 <body>
+  <div class="container">
+    <div class="table-responsive">
+      <table id="dataTable1">
+        <thead>
+          <tr>
+            <th>Manufacturer</th>
+            <th>Drug Name </th>
+            <th>Drug Code</th>
+            <th>Drug Mfd date</th>
+            <th>Drug Exp date</th>
+            <th>Is Drug Registered</th>
+            <th>Is Drug Safe below 18 years</th>
+            <th>Drug Type</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody1">
+          <!-- Table body will be populated dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   <button class="checkout-form__button" onclick="openPopupDrug()">Create DrugGroup</button>
   <div id="popupForm1" class="popup">
@@ -22,7 +43,7 @@
   
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Manufacturer</span>
-      <select name="Manufacturer" required>
+      <select name="manufacturer" id="manufacturer" required>
         <option>Select</option>
         <option>Cipla</option>
         <option>Abbive</option>
@@ -37,10 +58,11 @@
     <label class="checkout-form__address input">
       <span class="input__label">Drug Name</span>
       <input 
-        name="Drugname" 
+        name="drugname" 
+        id="drugname"
         type="text" 
         required 
-        placeholder="Drugname" 
+        placeholder="drugname" 
         data-minlength="2" 
         data-maxlength="256" 
       />
@@ -49,7 +71,8 @@
     <label class="checkout-form__address input">
       <span class="input__label">Drug Code</span>
       <input 
-        name="Drugcode" 
+        name="drugcode" 
+        id="drugcode"
         type="text" 
         required 
         placeholder="Drug code" 
@@ -61,8 +84,9 @@
     <label class="checkout-form__address input">
       <span class="input__label">Drug Mfd date</span>
       <input 
-      name="Drug-mfd-date" 
+      name="drugmfddate" 
       type="date" 
+      id="drugmfddate"
       required 
       min="2000-01-01" 
       max="2999-12-31"
@@ -72,8 +96,9 @@
     <label class="checkout-form__address input">
       <span class="input__label">Drug Exp date</span>
       <input 
-      name="Drug-exp-date" 
+      name="drugexpdate" 
       type="date" 
+      id="drugexpdate"
       required 
       min="2000-01-01" 
       max="2999-12-31"
@@ -82,7 +107,7 @@
     </label>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Is Drug Registered</span>
-      <select name="Manufacturer" required>
+      <select name="isdrugregistered" id="isdrugregistered" required>
         <option>Select</option>
         <option>Yes</option>
         <option>No</option>
@@ -91,7 +116,7 @@
     </label>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Is Drug Safe below 18 years</span>
-      <select name="Manufacturer" required>
+      <select name="drugsafe"  id="drugsafe" required>
         <option>Select</option>
         <option>Yes</option>
         <option>No</option>
@@ -100,7 +125,7 @@
     </label>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Drug Type</span>
-      <select name="Manufacturer" required>
+      <select name="drugtype" id="drugtype" required>
         <option>Select</option>
         <option>Tablet</option>
         <option>Syrup</option>
@@ -110,7 +135,7 @@
       <span class="input__error-message" aria-hidden="true"></span>
     </label>
     <div class="submit-cancel">
-      <button type="submit" class="checkout-form__button">Submit</button>
+      <button class="checkout-form__button" type="button" onclick="submitFormDrug()">Submit</button>
       <button type="cancel" class="checkout-form__button">Cancel</button>
     </div>
   </fieldset>
