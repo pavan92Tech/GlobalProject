@@ -11,6 +11,7 @@
     <title>Mediscript</title>
   </head>
 <body>
+  <p class="sub-title">Drug Group Details</p>
   <div class="container">
     <div class="table-responsive">
       <table id="dataTable1">
@@ -37,10 +38,9 @@
   <div id="popupForm1" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopupDrug()">&times;</span>
-      <h2>Contract Details Form</h2>
       <form id="drugform" class="checkout-form checkout-form-drug">
         <fieldset class="checkout-form__billing">
-  
+          <legend class="sub-title">Create Drug group</legend>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Manufacturer</span>
       <select name="manufacturer" id="manufacturer" required>
@@ -52,7 +52,7 @@
       <span class="input__error-message" aria-hidden="true"></span>
     </label>
     <div>
-      <button type="submit" class="checkout-form__button">Select Button</button>
+      <button type="submit" class="checkout-form__button" id="selectButton">Select Button</button>
     </div>        
     
     <label class="checkout-form__address input">
@@ -136,7 +136,6 @@
     </label>
     <div class="submit-cancel">
       <button class="checkout-form__button" type="button" onclick="submitFormDrug()">Submit</button>
-      <button type="cancel" class="checkout-form__button">Cancel</button>
     </div>
   </fieldset>
     </form>

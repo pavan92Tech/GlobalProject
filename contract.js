@@ -54,15 +54,35 @@ function submitForm() {
 
   // Close the popup
   closePopup();
-  const postDataExample = { key: "value" };
+  const postDataExample = JSON.stringify({
+    "manufacturerId": "660cf83703ff2cbe7a5eb81e",
+    "manufacturerName": "Nicip",
+    "contractName": "C001",
+    "contractId": "C001",
+    "startDate": "2024-04-03",
+    "endDate": "2024-06-03",
+    "coveredAmount": 20000,
+    "country": "India",
+    "state": "Karnataka",
+    "isRebatebaleCovered": true,
+    "isInsulinCovered": true,
+    "sameShipping": true,
+    "saveInfo": true
+  });
+  
   postData(postapiUrl, postDataExample).then((data) => {
     console.log(data);
-    // Do something with the response data
   });
 }
 
 function fetchData(url) {
-  return fetch(url)
+  return fetch(url,{
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": "Bearer AUTH_TOKEN"
+    },
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -77,10 +97,34 @@ function fetchData(url) {
       console.error("There was a problem with the GET request:", error);
     });
 }
-// Example usage
-const getapiUrl = "https://example.com/api";
-const postapiUrl = "https://example.com/api";
-// Make a GET request
+
+const getapiUrl = "http://localhost:3000/api/contract";
+const postapiUrl = "http://localhost:3000/api/contract";
+//Make a GET request
 fetchData(getapiUrl).then((data) => {
-  // Do something with the fetched data
+  console.log(data)
 });
+function postData(url, data) {
+  return fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      "Authorization": "Bearer AUTH_TOKEN"
+    },
+
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('POST request successful:', data);
+      return data;
+    })
+    .catch(error => {
+      console.error('There was a problem with the POST request:', error);
+    });
+}
