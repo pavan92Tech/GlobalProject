@@ -21,16 +21,16 @@ document
       passwordError.textContent = "Please enter your password.";
       return;
     }
-    const raw = JSON.stringify({
-      "username": username,
+    const raw = {
+      "email": username,
       "password": password
-    });
+    };
     console.log(raw);
     postData(postapiUrl, raw).then((data) => {
       console.log(data);
-       window.location.replace("index.html");
+      window.location.replace("home.html");
     });
-    window.location.href = "index.html";
+   // window.location.href = "home.html";
   });
   const postapiUrl = "http://localhost:3000/api/user/login";
   function postData(url, data) {
