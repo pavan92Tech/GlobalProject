@@ -1,5 +1,6 @@
 const express = require('express');
 var cookieParser = require('cookie-parser');
+var cors = require('cors')
 
 const connectDb = require("./config/dbConnection");
 
@@ -16,6 +17,7 @@ connectDb();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 app.use("/api/contract", contractRouter);
 app.use("/api/manufacturer", manufacturerRouter);
