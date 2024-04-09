@@ -22,40 +22,43 @@ document
       return;
     }
     const raw = {
-      "email": username,
-      "password": password
+      email: username,
+      password: password,
     };
-    console.log(raw);
     postData(postapiUrl, raw).then((data) => {
-      console.log(data);
-      window.location.replace("home.html");
+      if (data) {
+        sessionStorage.setItem("accessToken", `Bearer ${data.accessToken}`);
+        console.log(sessionStorage.getItem("accessToken"));
+        window.location.replace("home.html");
+      } else {
+        alert("Wrong Username and Password!!");
+      }
     });
-   // window.location.href = "home.html";
   });
-  const postapiUrl = "http://localhost:3000/api/user/login";
-  function postData(url, data) {
-    return fetch(url, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-  
-      body: JSON.stringify(data)
+const postapiUrl = "http://localhost:3000/api/user/login";
+function postData(url, data) {
+  return fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
     })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then(data => {
-        console.log('POST request successful:', data);
-        return data;
-      })
-      .catch(error => {
-        console.error('There was a problem with the POST request:', error);
-      });
-  }
+    .then((data) => {
+      console.log("POST request successful:", data);
+      return data;
+    })
+    .catch((error) => {
+      console.error("There was a problem with the POST request:", error);
+    });
+}
 // document.getElementById("resetButton").addEventListener("click", function () {
 //   document.getElementById("username").value = "";
 //   document.getElementById("password").value = "";
@@ -64,27 +67,22 @@ document
 //   document.getElementById("passwordError").textContent = "";
 // });
 
-
-
 // login animation
 const inputs = document.querySelectorAll(".input");
 
-
-function addcl(){
-	let parent = this.parentNode.parentNode;
-	parent.classList.add("focus");
+function addcl() {
+  let parent = this.parentNode.parentNode;
+  parent.classList.add("focus");
 }
 
-function remcl(){
-	let parent = this.parentNode.parentNode;
-	if(this.value == ""){
-		parent.classList.remove("focus");
-	}
+function remcl() {
+  let parent = this.parentNode.parentNode;
+  if (this.value == "") {
+    parent.classList.remove("focus");
+  }
 }
 
-
-inputs.forEach(input => {
-	input.addEventListener("focus", addcl);
-	input.addEventListener("blur", remcl);
+inputs.forEach((input) => {
+  input.addEventListener("focus", addcl);
+  input.addEventListener("blur", remcl);
 });
-

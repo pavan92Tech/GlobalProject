@@ -31,7 +31,7 @@
               <th>Manufacturer Id</th>
               </tr>
           </thead>
-          <tbody id="tableBody2">
+          <tbody id="tableBodyMan">
             <!-- Table body will be populated dynamically -->
           </tbody>
         </table>
@@ -48,8 +48,8 @@
           <label class="checkout-form__firstname input">
             <span class="input__label">Manufacturer Name</span>
             <input
-              name="manufacturernamedetail"
-              id="manufacturernamedetail"
+              name="manufacturerName"
+              id="manufacturerName"
               type="text"
               required
               placeholder="Manufacturer Name"
@@ -60,10 +60,10 @@
           </label>
 
           <label class="checkout-form__firstname input">
-            <span class="input__label">Contract Start Date</span>
+            <span class="input__label">Manufacturer Start Date</span>
             <input
-              name="contractStartDate"
-              id="contractStartDate"
+              name="manStartDate"
+              id="manStartDate"
               type="date"
               required
               min="2000-01-01"
@@ -72,10 +72,10 @@
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__lastname input">
-            <span class="input__label">Contract End date</span>
+            <span class="input__label">Manufacturer End date</span>
             <input
-              name="contractEndDate"
-              id="contractEndDate"
+              name="manEndDate"
+              id="manEndDate"
               type="date"
               required
               min="2000-01-01"
@@ -98,12 +98,11 @@
           </label>
           <label class="checkout-form__address input">
             <span class="input__label">Manufacturer Phone No</span>
-            <small>Format: 91-7808977973</small>
             <input
               type="tel"
               id="phone"
               name="phone"
-              pattern="[0-9]{2}-[0-9]{10}"
+              pattern="[0-9]{10}"
               required
             />
             <span class="input__error-message" aria-hidden="true"></span>
@@ -113,7 +112,7 @@
             <input
               name="manufacturerId"
               id="manufacturerId"
-              type="number"
+              type="text"
               required
               placeholder="Manufacturer Id"
               data-minlength="2"
@@ -122,11 +121,11 @@
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__same-shipping">
-            <input type="checkbox" name="supportsCashless" />
+            <input type="checkbox" name="supportsCashless" id="cashless"/>
             <span>Manufacturer supports cashless</span>
           </label>
           <label class="checkout-form__save-info">
-            <input type="checkbox" name="supportReimbursement" />
+            <input type="checkbox" name="supportReimbursement" id="reimbursement"/>
             <span>Manufacturer Support Reimbursement</span>
           </label>
         </fieldset>

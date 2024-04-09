@@ -14,7 +14,7 @@
   <p class="sub-title">Drug Group Details</p>
   <div class="container">
     <div class="table-responsive">
-      <table id="dataTable1">
+      <table id="tableBodyDrugs">
         <thead>
           <tr>
             <th>Manufacturer</th>
@@ -59,7 +59,7 @@
       <span class="input__label">Drug Name</span>
       <input 
         name="drugname" 
-        id="drugname"
+        id="drugName"
         type="text" 
         required 
         placeholder="drugname" 
@@ -72,7 +72,7 @@
       <span class="input__label">Drug Code</span>
       <input 
         name="drugcode" 
-        id="drugcode"
+        id="drugCode"
         type="text" 
         required 
         placeholder="Drug code" 
@@ -84,9 +84,9 @@
     <label class="checkout-form__address input">
       <span class="input__label">Drug Mfd date</span>
       <input 
-      name="drugmfddate" 
+      name="drugMfdDate" 
       type="date" 
-      id="drugmfddate"
+      id="drugMfdDate"
       required 
       min="2000-01-01" 
       max="2999-12-31"
@@ -98,7 +98,7 @@
       <input 
       name="drugexpdate" 
       type="date" 
-      id="drugexpdate"
+      id="drugExpDate"
       required 
       min="2000-01-01" 
       max="2999-12-31"
@@ -107,7 +107,7 @@
     </label>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Is Drug Registered</span>
-      <select name="isdrugregistered" id="isdrugregistered" required>
+      <select name="isdrugregistered" id="isDrugRegistered" required>
         <option>Select</option>
         <option>Yes</option>
         <option>No</option>
@@ -116,7 +116,7 @@
     </label>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Is Drug Safe below 18 years</span>
-      <select name="drugsafe"  id="drugsafe" required>
+      <select name="drugsafe"  id="drugSafe" required>
         <option>Select</option>
         <option>Yes</option>
         <option>No</option>
@@ -125,7 +125,7 @@
     </label>
     <label class="input input--select drug-input--select input--required">
       <span class="input__label">Drug Type</span>
-      <select name="drugtype" id="drugtype" required>
+      <select name="drugtype" id="drugType" required>
         <option>Select</option>
         <option>Tablet</option>
         <option>Syrup</option>

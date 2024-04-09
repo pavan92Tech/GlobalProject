@@ -40,7 +40,7 @@
       </table>
     </div>
   </div>
-  
+
   <button class="checkout-form__button" onclick="openPopup()">Create contract</button>
   <div id="popupForm" class="popup">
     <div class="popup-content">
@@ -50,39 +50,35 @@
           <legend class="sub-title">Create contract</legend>
           <label class="checkout-form__firstname input">
             <span class="input__label">Contract Name</span>
-            <input name="contractname" id="contractname" type="text" placeholder="Contract Name" data-minlength="2"
+            <input name="contractname" id="contractName" type="text" placeholder="Contract Name" data-minlength="2"
               data-maxlength="256" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__lastname input">
             <span class="input__label">Contract Id</span>
-            <input name="contractid" id="contractid" type="text" placeholder="Contract Id" data-minlength="2"
+            <input name="contractid" id="contractId" type="text" placeholder="Contract Id" data-minlength="2"
               data-maxlength="256" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__firstname input">
             <span class="input__label"> Contract Start Date</span>
-            <input name="startdate" id="startdate" type="date" min="2000-01-01" max="2999-12-31" />
+            <input name="startdate" id="startDate" type="date" min="2000-01-01" max="2999-12-31" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__lastname input">
             <span class="input__label">Contract End date</span>
-            <input name="enddate" id="enddate" type="date" min="2000-01-01" max="2999-12-31" />
+            <input name="enddate" id="endDate" type="date" min="2000-01-01" max="2999-12-31" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__address input">
             <span class="input__label">Covered Amount</span>
-            <input name="coveredamount" id="coveredamount" type="number" placeholder="00.00" data-minlength="3" data-maxlength="9999999.99"
-              pattern="^\d{10}" />
+            <input name="coveredamount" id="coveredAmount" type="number" placeholder="00.00" data-minlength="3"
+              data-maxlength="9999999.99" pattern="^\d{10}" />
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__country input input--select">
             <span class="input__label">Manufacturer Name</span>
             <select name="manufacturername" id="manufacturername">
-              <option></option>
-              <option>Abbot</option>
-              <option>Abbvie</option>
-              <option>Sun Pharma</option>
             </select>
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
@@ -105,11 +101,11 @@
             <span class="input__error-message" aria-hidden="true"></span>
           </label>
           <label class="checkout-form__same-shipping">
-            <input type="checkbox" name="sameShipping" />
+            <input type="checkbox" name="sameShipping" id="sameShipping" />
             <span>Is user covered with Rebatebale and Non Rebatebale Drugs</span>
           </label>
           <label class="checkout-form__save-info">
-            <input type="checkbox" name="saveInfo" />
+            <input type="checkbox" name="saveInfo" id="saveInfo" />
             <span>Is user covered with Insulins and powders</span>
           </label>
         </fieldset>
@@ -121,8 +117,9 @@
     </div>
   </div>
 
-  
+
   <script src="script.js"></script>
   <script src="contract.js"></script>
 </body>
+
 </html>
