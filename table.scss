@@ -6,17 +6,17 @@ table {
 
   td,
   th {
-    border-top: 1px solid #ecf0f1;
+    border-top: 1px solid #4ecdc4;
     padding: 10px;
   }
 
   td {
-    border-left: 1px solid #ecf0f1;
-    border-right: 1px solid #ecf0f1;
+    border-left: 1px solid #4ecdc4;
+    border-right: 1px solid #4ecdc4;
   }
 
   th {
-    background-color: #4ecdc4;
+    background-color: #0b3d5f;
   }
 
   tr:nth-of-type(even) td {
@@ -25,7 +25,7 @@ table {
 
   .total {
     th {
-      background-color: white;
+      background-color: #4ecdc4;
     }
 
     td {
@@ -57,11 +57,11 @@ table {
         background-color: lighten(#4ecdc4, 35%);
       }
       &:nth-of-type(odd) td:first-child {
-        background-color: white;
+        background-color: #4ecdc4;
       }
 
       &:nth-of-type(even) td:not(:first-child) {
-        background-color: white;
+        background-color: #4ecdc4;
       }
 
       th:first-child {

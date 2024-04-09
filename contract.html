@@ -11,12 +11,13 @@
   <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="styles.scss">
   <link rel="stylesheet" type="text/css" href="tabs.scss">
+  <link rel="stylesheet" type="text/css" href="table.scss">
 
   <title>Mediscript</title>
 </head>
 
 <body>
-  <h3>Contract Details Form</h3>
+  <p class="sub-title">Contract Details</p>
 
   <div class="container">
     <div class="table-responsive">
@@ -44,10 +45,9 @@
   <div id="popupForm" class="popup">
     <div class="popup-content">
       <span class="close" onclick="closePopup()">&times;</span>
-      <h2>Contract Details Form</h2>
       <form class="checkout-form" id="myForm" novalidate>
         <fieldset class="checkout-form__billing">
-          <legend class="checkout-form__legend">Create contract</legend>
+          <legend class="sub-title">Create contract</legend>
           <label class="checkout-form__firstname input">
             <span class="input__label">Contract Name</span>
             <input name="contractname" id="contractname" type="text" placeholder="Contract Name" data-minlength="2"
