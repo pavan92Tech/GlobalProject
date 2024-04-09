@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.scss">
+  <link rel="stylesheet" type="text/css" href="tabs.scss">
+  <link rel="stylesheet" type="text/css" href="table.scss">
+  <title>Mediscript</title>
+</head>
+<body>
+  <div id="headerContent"></div>
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('headerContent').innerHTML = html;
+      });
+  </script>
+  <div class="content">
+    <!-- tab design -->
+    <div class="tabs">
+      <div class="tabs-tags">
+        <span class="tabs-tags__tag">Manufacturer</span>
+        <span class="tabs-tags__tag">Drug</span>
+        <span class="tabs-tags__tag">Contract</span>
+        <span class="tabs-tags__tag">Claims</span>
+      </div>
+      <div class="tabs-content">
+        <div class="tabs-content__text">
+          <div id="manufacturerContent"></div>
+          <script>
+            fetch('manufacturer.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('manufacturerContent').innerHTML = html;
+              });
+          </script>
+        </div>
+        <div class="tabs-content__text">
+          <div id="drugContent"></div>
+          <script>
+
+            fetch('drug-group.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('drugContent').innerHTML = html;
+              });
+          </script>
+        </div>
+        <div class="tabs-content__text">
+          <div id="contractContent"></div>
+          <script>
+            fetch('contract.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('contractContent').innerHTML = html;
+              });
+          </script>
+        </div>
+        <div class="tabs-content__text">
+          <div id="claimsContent"></div>
+          <script>
+            fetch('claims.html')
+              .then(response => response.text())
+              .then(html => {
+                document.getElementById('claimsContent').innerHTML = html;
+              });
+          </script>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div id="footerContent"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footerContent').innerHTML = html;
+      });
+  </script>
+  <script src="script.js"></script>
+  <script src="tabs.js"></script>
+  <script src="contract.js"></script>
+  <script src="drug-group.js"></script>
+  <script src="manufacturer.js"></script>
+</body>
+</html>
