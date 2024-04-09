@@ -4,7 +4,10 @@ function openPopupDrug() {
 function closePopupDrug() {
   document.getElementById("popupForm1").style.display = "none";
 }
-
+const getManufacturerLisUrl = "http://localhost:3000/api/manufacturer";
+const postDrugUrl = "http://localhost:3000/api/drug";
+const getDrugUrl = "http://localhost:3000/api/drug";
+getAllDrugs();
 function submitFormDrug() {
   var manufacturer = document.getElementById("manufacturer").value;
   var drugname = document.getElementById("drugname").value;
@@ -50,15 +53,37 @@ function submitFormDrug() {
   document.getElementById("drugsafe").value = "";
   document.getElementById("drugtype").value = "";
 
-  // Close the popup
-  closePopupDrug();
   const postDataExample = { key: "value" };
   postData(postapiUrl, postDataExample).then((data) => {
-    console.log(data);
     // Do something with the response data
   });
 }
-
+function getAllDrugs(){
+  fetchData(getDrugUrl).then((data) => {
+    data.drugs.map((data) => {
+      var newRow = document.createElement("tr");
+      newRow.innerHTML =
+        "<td>" +
+        data.manufacturerId +
+        "</td><td>" +
+        data.drugName +
+        "</td><td>" +
+        data.drugCode +
+        "</td><td>" +
+        data.mfdDate +
+        "</td><td>" +
+        data.expDate +
+        "</td><td>" +
+        data.registered +
+        "</td><td>" +
+        data.isSafeForUnderAge +
+        "</td><td>" +
+        data.drugType +
+        "</td>";
+      document.getElementById("tableBodyDrugs").appendChild(newRow);
+    });
+  })
+}
 
 
 

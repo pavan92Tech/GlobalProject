@@ -6,81 +6,70 @@ function closePopup() {
   document.getElementById("popupForm").style.display = "none";
 }
 
+const getapiUrl = "http://localhost:3000/api/contract";
+const postapiUrl = "http://localhost:3000/api/contract";
+const getManUrl = "http://localhost:3000/api/manufacturer";
+const accessToken = sessionStorage.getItem("accessToken");
+let manufacturerList = [];
+getContractDetails();
+getMan();
+
 function submitForm() {
-  var contractname = document.getElementById("contractname").value;
-  var contractid = document.getElementById("contractid").value;
-  var startdate = document.getElementById("startdate").value;
-  var enddate = document.getElementById("enddate").value;
-  var coveredamount = document.getElementById("coveredamount").value;
-  var manufacturername = document.getElementById("manufacturername").value;
+  var contractName = document.getElementById("contractName").value;
+  var contractId = document.getElementById("contractId").value;
+  var startDate = document.getElementById("startDate").value;
+  var endDate = document.getElementById("endDate").value;
+  var coveredAmount = document.getElementById("coveredAmount").value;
   var country = document.getElementById("country").value;
   var state = document.getElementById("state").value;
-  // Create a new row
-  var newRow = document.createElement("tr");
 
-  // Add data to the row
-  newRow.innerHTML =
-    "<td>" +
-    contractname +
-    "</td><td>" +
-    contractid +
-    "</td><td>" +
-    startdate +
-    "</td><td>" +
-    enddate +
-    "</td><td>" +
-    coveredamount +
-    "</td><td>" +
-    manufacturername +
-    "</td><td>" +
-    country +
-    "</td><td>" +
-       state +
-    "</td>";
+  const manuname = manufacturerList.find(
+    (x) => x._id === document.getElementById("manufacturername").value
+  );
 
-  // Append the row to the table body
-  document.getElementById("tableBody").appendChild(newRow);
-
-  // Clear input fields
-  document.getElementById("contractname").value = "";
-  document.getElementById("contractid").value = "";
-  document.getElementById("startdate").value = "";
-  document.getElementById("enddate").value = "";
-  document.getElementById("coveredamount").value = "";
+  function clearInputs(){
+  document.getElementById("contractName").value = "";
+  document.getElementById("contractId").value = "";
+  document.getElementById("startDate").value = "";
+  document.getElementById("endDate").value = "";
+  document.getElementById("coveredAmount").value = "";
   document.getElementById("manufacturername").value = "";
   document.getElementById("country").value = "";
   document.getElementById("state").value = "";
+  document.getElementById("sameShipping").value = false;
+  document.getElementById("saveInfo").value = false;
+  }
 
+  const postDataExample = {
+    manufacturerId: document.getElementById("manufacturername").value,
+    manufacturerName: manuname.name,
+    contractName: contractName,
+    contractId: contractId,
+    startDate: startDate,
+    endDate: endDate,
+    coveredAmount: coveredAmount,
+    country: country,
+    state: state,
+    sameShipping: true,
+    saveInfo: true,
+  };
 
-  // Close the popup
-  closePopup();
-  const postDataExample = JSON.stringify({
-    "manufacturerId": "660cf83703ff2cbe7a5eb81e",
-    "manufacturerName": "Nicip",
-    "contractName": "C001",
-    "contractId": "C001",
-    "startDate": "2024-04-03",
-    "endDate": "2024-06-03",
-    "coveredAmount": 20000,
-    "country": "India",
-    "state": "Karnataka",
-    "isRebatebaleCovered": true,
-    "isInsulinCovered": true,
-    "sameShipping": true,
-    "saveInfo": true
-  });
-  
   postData(postapiUrl, postDataExample).then((data) => {
-    console.log(data);
+    
+    if (data) {
+      clearInputs();
+      closePopup();
+      getContractDetails();
+    }
   });
 }
 
 function fetchData(url) {
-  return fetch(url,{
-    method: 'GET',
+  return fetch(url, {
+    method: "GET",
     headers: {
-      'Content-Type': 'application/json',
-      "Authorization": "Bearer AUTH_TOKEN"
+      "Content-Type": "application/json",
+      Authorization: accessToken,
     },
   })
     .then((response) => {
@@ -98,33 +87,69 @@ function fetchData(url) {
     });
 }
 
-const getapiUrl = "http://localhost:3000/api/contract";
-const postapiUrl = "http://localhost:3000/api/contract";
-//Make a GET request
-fetchData(getapiUrl).then((data) => {
-  console.log(data)
-});
+function getMan() {
+  fetchData(getManUrl).then((data) => {
+    manufacturerList = data.manufacturers;
+    var elm = document.getElementById("manufacturername"),
+      df = document.createDocumentFragment();
+    for (var i = 0; i < data.manufacturers.length; i++) {
+      var option = document.createElement("option");
+      option.value = data.manufacturers[i]?._id;
+      option.appendChild(document.createTextNode(data.manufacturers[i]?.name));
+      df.appendChild(option);
+    }
+    elm.appendChild(df);
+  });
+  
+}
+function getContractDetails() {
+  fetchData(getapiUrl).then((data) => {
+    data.contracts.map((data) => {
+      var newRow = document.createElement("tr");
+      newRow.innerHTML =
+        "<td>" +
+        data.contractName +
+        "</td><td>" +
+        data.contractId +
+        "</td><td>" +
+        data.startDate +
+        "</td><td>" +
+        data.endDate +
+        "</td><td>" +
+        data.coveredAmount +
+        "</td><td>" +
+        data.manufacturerName +
+        "</td><td>" +
+        data.country +
+        "</td><td>" +
+        data.state +
+        "</td>";
+      document.getElementById("tableBody").appendChild(newRow);
+    });
+  });
+}
+
 function postData(url, data) {
   return fetch(url, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
-      "Authorization": "Bearer AUTH_TOKEN"
+      "Content-Type": "application/json",
+      Authorization: accessToken,
     },
 
-    body: JSON.stringify(data)
+    body: JSON.stringify(data),
   })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok");
       }
       return response.json();
     })
-    .then(data => {
-      console.log('POST request successful:', data);
+    .then((data) => {
+      console.log("POST request successful:", data);
       return data;
     })
-    .catch(error => {
-      console.error('There was a problem with the POST request:', error);
+    .catch((error) => {
+      console.error("There was a problem with the POST request:", error);
     });
 }
