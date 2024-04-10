@@ -38,7 +38,7 @@ const getAllDrugs = asyncHandler(async (req, res) => {
 //@access public
 const getDrug = asyncHandler(async (req, res) => {
   try {
-    const drug = await Drug.findById(req.params.id);
+    const drug = await Drug.findById(req.params.id).populate('manufacturerId', '_id name');
     if (!drug) {
       res.status(404);
       throw new Error("drug not found");
