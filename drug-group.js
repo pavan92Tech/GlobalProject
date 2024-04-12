@@ -53,7 +53,7 @@ function getAllDrugs(){
       var newRow = document.createElement("tr");
       newRow.innerHTML =
         "<td>" +
-        data.manufacturerId +
+        data.manufacturerId.name +
         "</td><td>" +
         data.drugName +
         "</td><td>" +
