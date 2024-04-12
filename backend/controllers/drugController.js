@@ -25,7 +25,7 @@ const registerDrug = asyncHandler(async (req, res) => {
 //@route GET /api/drug
 //@access public
 const getAllDrugs = asyncHandler(async (req, res) => {
-  const drugs = await Drug.find();
+  const drugs = await Drug.find().populate('manufacturerId', '_id name');
   res.json({
     status: 200,
     drugs: drugs,
